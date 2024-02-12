@@ -1,0 +1,124 @@
+/* Style for the sidebar container */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Extend sidebar to full height */
+  width: 250px; /* Adjust width as needed */
+  background-color: white; /* Sidebar background color */
+  padding-top: 20px; /* Space for image at the top */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  z-index: 1000; /* Ensure sidebar stays on top */
+  transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+/* Style for the image */
+.navbar-image {
+  display: block;
+  margin: 0 auto; /* Center the image */
+  padding-bottom: 40px;
+}
+
+/* Style for sidebar items */
+.sidebar-item {
+  padding: 15px 20px; /* Add padding to the sidebar items */
+  margin: 0; /* Remove default margin */
+  margin-bottom:30px;
+  font-size: 16px; /* Adjust font size as needed */
+  color: #ffffff; /* Text color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  display: flex;
+  align-items: center;
+}
+
+/* Style for sidebar items on hover */
+.sidebar-item:hover {
+  background-color: #659eda; /* Change background color on hover */
+}
+
+.sidebar-text {
+  color: black;
+  font-size: 20px; /* Increase font size */
+  font-family: 'Your Chosen Font', sans-serif; /* Add font family */
+  letter-spacing: 2px; /* Increase letter spacing */
+
+}
+
+.sidebar-icon {
+  color: #0056b3;
+  padding: 10px;
+  padding-top: 10px;
+}
+/* Style for the main content */
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px; /* Add padding to separate from sidebar */
+}
+
+.icon {
+  margin-right: 20px;
+  padding-right: 20px;
+}
+
+.text {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+/* sidebar.css */
+
+.profile-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+  position: relative;
+  padding: 10px 5px 10px 5px;
+  background-color: #F6FEFF;
+}
+
+/* Welcome Text */
+.welcome-text {
+  margin-right: 10px; /* Add some margin to separate from profile icon */
+}
+
+/* Profile Icon */
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px); /* Position below profile icon */
+  left: 57%; /* Position relative to the center */
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  min-width: 120px;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu a {
+  display: block; /* Display as block for full width */
+  padding: 8px 16px; /* Add padding */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Set text color */
+}
+
+/* Dropdown Menu Item Hover */
+.dropdown-menu a:hover {
+  background-color: #f5f5f5; /* Light gray background on hover */
+}
+
+
+.btn-profile {
+  border: none;
+  background-color: transparent;
+}

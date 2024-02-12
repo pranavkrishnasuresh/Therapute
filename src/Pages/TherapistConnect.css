@@ -1,0 +1,60 @@
+/* styles.css */
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.therapist-info {
+  margin-bottom: 40px;
+}
+
+.therapist-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.therapist-details h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.therapist-details p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.exercises-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.exercises-list h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.exercises-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.exercises-list li {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.exercise-name {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.due-date {
+  font-size: 1rem;
+  color: #666;
+}

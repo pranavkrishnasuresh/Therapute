@@ -1,0 +1,76 @@
+.landing-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #55a6f2, #ffffff, #1777d7); /* Blue to white to blue gradient */
+}
+
+.landing-page-header {
+  padding: 40px 0;
+  background-image: linear-gradient(to bottom, #007bff, #F0F0F0);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  letter-spacing: 4px;
+  font-family: "Open Sans";
+}
+
+.hero {
+  background-color: #f0f0f0;
+  padding: 50px 0;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background-image: linear-gradient(to bottom, #F0F0F0, #69A7E6);
+}
+
+.feature {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-landing {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-landing a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-landing a:hover {
+  color: #007bff;
+}

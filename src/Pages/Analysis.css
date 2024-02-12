@@ -1,0 +1,19 @@
+.analysis-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .analysis-content {
+    max-width: 300px;
+    margin-left: 300px;
+  }
+  
+  .chart-container {
+  }
+  
+  .additional-info {
+  }
+  
+  

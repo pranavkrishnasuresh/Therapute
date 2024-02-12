@@ -1,0 +1,176 @@
+.exercise-list-container {
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .analytics-box, .pending-conversations-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .analytics-box h3, .pending-conversations-box h3 {
+    margin-top: 0;
+  }
+  
+  .pending-conversations {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+  }
+  
+  .exercise-sections{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .exercise-item {
+    margin-bottom: 10px;
+  }
+  
+  .exercise-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h4 {
+    margin: 0;
+  }
+  
+  .closeModalButton {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .closeModalButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Chatbot Modal styles (assuming it's positioned fixed or absolute) */
+  .chatbot-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px; /* Adjust max-width as needed */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ccc;
+  }
+  
+  .close-button:hover {
+    color: #666;
+  }
+  
+  /* Existing CSS styles remain the same */
+
+.pending-conversations-box {
+    margin-bottom: 20px;
+    width: 300px;
+    margin-right: 50px;
+  }
+  
+  .past-conversations-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .past-conversations {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .conversation-item {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+  
+  .description {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .conversation-item:hover .description {
+    display: block;
+  }
+  
+  /* Existing CSS styles remain the same */
+
+/* Chatbot Modal styles */
+.chatbot-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 999; /* Ensure the modal is on top of other content */
+  }
+  
+  .chatbot-modal {
+    width: 80%;
+    max-width: 600px; /* Adjust max-width as needed */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ccc;
+  }
+  
+  .close-button:hover {
+    color: #666;
+  }
+  
+  .closeModalButton {
+    margin-top: 10px;
+  }
