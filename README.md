@@ -1,1 +1,16 @@
-# Therapute
+# Project Name: Therapute
+
+### Problem it solves:
+In today’s world, accessing comprehensive physical and sports therapy pose a significant challenge for individuals aiming to recover from injuries or enhance their mobility. Traditional therapy methods present notable hurdles, primarily due to their exorbitant costs, rendering them unaffordable for many. Moreover, scheduled sessions are often spaced out due to financial constraints, leaving patients with minimal support between appointments. In such instances, patients and athletes are typically provided with a series of exercises to complete independently, serving as their sole assurance of progress. However, these exercises may include potentially risky maneuvers such as dumbbell thrusts, deadlifts, or weighted internal rotations, which, if performed incorrectly, can impede muscle regrowth and hinder recovery. This lack of personalized guidance not only prolongs the rehabilitation process but also poses risks to patients' physical and mental well-being.
+
+Therapute revolutionizes the rehabilitation landscape, harnessing the power of data science and artificial intelligence to create free, around-the-clock personalized physical therapy attention. Our platform allows individuals to record themselves performing physical and sports therapy exercises and receive instant, detailed feedback on their form and technique through live correction and 3D simulation. Our approach empowers users to correct their movements in real-time, optimizing their rehabilitation journey and maximizing their potential for recovery.
+
+### Challenges we ran into:
+- **Developing a Custom Server for Live Video Feed Data:** Crafting a bespoke server capable of efficiently processing live video feeds with minimal latency presented a formidable technical hurdle. Ensuring the seamless transmission and reception of data in real-time added layers of complexity to our development process, demanding meticulous attention to detail and innovative problem-solving.
+- **Translating Inverse Kinematics into Modeling:** Converting complex mathematical principles into practical models required meticulous attention to detail and innovative problem-solving. Bridging the gap between theoretical concepts and tangible application demanded creative solutions and collaboration.
+- **Integrating 3D Model Animations with Pose Detection Algorithms:** Blending the world of 3D animation with sophisticated pose detection algorithms necessitated a delicate balance between artistry and technical prowess. Integrating these elements seamlessly was a formidable challenge that required extensive experimentation and refinement.
+- **Verifying the Precision and Dependability of Analysis Algorithms:** Ensuring the accuracy and reliability of our analysis algorithms was paramount. Rigorous testing and validation processes were undertaken to verify the effectiveness of our algorithms in providing actionable insights to users.
+- **Balancing Detailed Corrective Feedback with User-Friendly Simplicity:** Striking the perfect balance between providing detailed corrective feedback and maintaining user-friendly simplicity was crucial in the development process. Our team dedicated hours to fine-tuning the user experience, ensuring that users receive comprehensive guidance without feeling overwhelmed.
+
+### Technologies we used:
+MediaPipe, TensorFlow, OpenCV, Firebase, Numpy, React, Flask, Hugging Face, Intel Developer Cloud, Jupyter Notebook
