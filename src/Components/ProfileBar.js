@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './sidebar.css';
-import dude2pic from "../images/dude2.jpeg"
+import pran from "../images/pran.jpeg"
 import {logActiveUserOut} from "../Config/firebaseConfig";
 
 const ProfileBar = ({imgSrc, username}) => {
@@ -23,7 +23,7 @@ const ProfileBar = ({imgSrc, username}) => {
     <div className="profile-bar">
       <div className="welcome-text">Welcome back, {username}</div>
       <div className="profile-icon" onClick={toggleDropdown}>
-      <img src={imgSrc} style={{ width: '30px', height: '30px', borderRadius: '50%', cursor: 'pointer' }}/>
+      <img src={pran} style={{ width: '30px', height: '30px', borderRadius: '50%', cursor: 'pointer' }}/>
       </div>
       {isOpen && (
         <div className="dropdown-menu">

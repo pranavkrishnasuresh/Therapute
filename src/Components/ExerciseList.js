@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import './ExerciseList.css'; // Import your CSS file for styling
 import Chatbot from './Chatbot';
 
+
 const ExerciseList = () => {
   const [exercises, setExercises] = useState(generateDummyExercises());
   const [selectedExercise, setSelectedExercise] = useState(null);
-  const [pastConversations, setPastConversations] = useState([
-    { id: 1, name: "Discussion about pain in upper thigh during knee extension" },
-    { id: 2, name: "Clarification on certain feelings on whether I am feeeling pain or " },
-  ]);
   const [chatbotTitle, setChatbotTitle] = useState("");
 
   // Function to generate dummy exercises
@@ -32,10 +29,7 @@ const ExerciseList = () => {
     setChatbotTitle("");
   };
 
-  // Function to handle adding past conversation
-  const handleAddPastConversation = (exercise) => {
-    setPastConversations([...pastConversations, exercise]);
-  };
+
 
   return (
     <div className="exercise-list-container">
@@ -85,17 +79,3 @@ const ExerciseList = () => {
 export default ExerciseList;
 
 
-
-
-// <div className="past-conversations-box">
-// <h3>Past Conversations</h3>
-// <div className="past-conversations">
-//   {pastConversations.map((conversation) => (
-//     <div key={conversation.id} className="conversation-item">
-//       <p>{conversation.name}</p>
-//       {/* Add brief description here */}
-//       <div className="description">Brief description of the conversation</div>
-//     </div>
-//   ))}
-// </div>
-// </div>

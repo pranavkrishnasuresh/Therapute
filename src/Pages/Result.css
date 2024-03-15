@@ -1,0 +1,24 @@
+.result-container {
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .video-container {
+    width: 45%;
+    scale: .5;
+  }
+  
+
+  .video-container img{
+    scale: 2;
+    margin-top: 300px;
+    margin-right: 200px;
+  }
+
+  .video-container video,
+  .video-container img {
+    width: 100%;
+    height: auto;
+  }
+  

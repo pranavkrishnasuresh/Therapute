@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
-import "./Chatbot.css"
-// const OpenAI = require("openai").OpenAI;
+import React, { useEffect, useState } from 'react';
+import './Chatbot.css';
+import axios from 'axios';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
+  const [userEntry, setUserEntry] = useState('');
 
-  const handleMessageSend = async (messageText) => {
-    // Add user message to the chat interface
-    setMessages((prevMessages) => [...prevMessages, { text: messageText, sender: 'user' }]);
 
-    // Send the user message to the chatbot API (assuming you have a function to handle this)
-    // const botResponse = await sendMessageToChatbot(messageText);
 
-    // Add bot response to the chat interface
-    // setMessages((prevMessages) => [...prevMessages, { text: botResponse, sender: 'bot' }]);
+  const handleMessageSend = (messageText, sender) => {
+    setMessages((prevMessages) => [...prevMessages, { text: messageText, sender }]);
   };
 
-  // const prompt1 = "What was your overall experience with this exercise?"
-  // const prompt2 = "Share some notable changes or insights you've experienced since using Therapute."
-  // const prompt3 = "How do you think the insights you gained from using Therapute have impacted your daily life?"
+  const sendPromptToServer = async () => {
+    try {
+      const response = await axios.post('http://localhost:3001/generate-response', { prompt: "The following is how a user feels doing the dumbell thrust exercise. Ask them questions to figure out more about how their exercise went. Be specific and anaytical. But also be super short and concise. 1 sentence. Here is what the user has to say" + userEntry  + "now here is a log of all previous messages you sent so you can provide best response" + messages});
 
-  // const openai = new OpenAI();
-  // const GPTresponse = openai.chat.completions.create({
-  //   model: "gpt-3.5-turbo",
-  //   messages: [
-  //     {
-  //       role: "user",
-  //       content: prompt,
-  //     }
-  //   ],
-  //   max_tokens: 5, 
-  // });
+      console.log('Server response:', response.data.response);
+
+      handleMessageSend(response.data.response, 'bot'); // Assuming the response contains the message from the bot
+    } catch (error) {
+      console.error('Error sending prompt to server:', error);
+    }
+  };
+
+  useEffect(() => {
+    handleMessageSend("Hey, so you did the dumbell thrust exercise right? How did it feel overall?", 'bot'); // Assuming the response contains the message from the bot
+  }, [])
+
+  useEffect(() => {
+    if (userEntry.trim() !== '') { // Check if userEntry is not empty
+      sendPromptToServer();
+    }
+  }, [userEntry]);
 
   return (
     <div className="chatbot-container">
@@ -47,20 +49,12 @@ const Chatbot = () => {
           placeholder="Type your message here..."
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
-              handleMessageSend(e.target.value);
+              handleMessageSend(e.target.value, 'user');
+              setUserEntry(e.target.value);
               e.target.value = '';
             }
           }}
         />
-        <button
-          onClick={() => {
-            const messageInput = document.querySelector('.chatbot-input input');
-            handleMessageSend(messageInput.value);
-            messageInput.value = '';
-          }}
-        >
-          Send
-        </button>
       </div>
     </div>
   );

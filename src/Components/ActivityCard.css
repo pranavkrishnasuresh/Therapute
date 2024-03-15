@@ -1,5 +1,5 @@
 .activity-card-individual {
-    border: 1px solid #ccc;
+    border: 1px solid #161616;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -21,6 +21,7 @@
 .activity-text {
     margin: 10px 0;
     text-align: center;
+    color: white
 }
 
 .activity-button {

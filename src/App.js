@@ -12,13 +12,16 @@ import LandingPage from "./Pages/LandingPage.js"
 import Signup from "./Pages/Signup.js"
 import "./index.css"
 import ExerciseGallery from './Pages/ExerciseGallery.js';
+import Progress from './Pages/Progress.js';
+import Result from './Pages/Result.js';
+import Upload from './Pages/Upload.js';
 
 
 function App() {
 
   return (
       <div className="secondContainer">
-        <ProfileBar className="top-component" imgSrc={"./images/dude2.jpeg"} username="Test Use"/>
+        <ProfileBar className="top-component" imgSrc="./images/pran.jpeg" username="Pranav"/>
         <div className="bottom-component">
         <BrowserRouter>
           <Routes>
@@ -32,6 +35,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/therapist-connect" element={<TherapistConnect />} />
+            <Route path="/progress" element={<Progress />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/Result" element={<Result />} />
+
           </Routes>
         </BrowserRouter>
         </div>

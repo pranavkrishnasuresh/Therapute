@@ -5,6 +5,11 @@ import mediapipe as mp
 import numpy as np
 from flask import request
 from flask_cors import CORS
+import os
+from openai import Client
+import flask
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -327,12 +332,15 @@ def generate_frames():
                 else:
                     errors = planks(landmarks)
 
-
+                if len(errors) == 0:
+                    cv2.rectangle(image, (0, 0), (1920, 70), (79,201,128), -1)
+                    cv2.putText(image, f'Great Form!', (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
                 for i in range(len(errors)):
-                    cv2.putText(image, f'Error: {errors[i]}', (50,100 + 80*i), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 2)
+                    cv2.rectangle(image, (0, 0), (1920, 70), (79,201,128), -1)
+                    cv2.putText(image, f'Error: {errors[i]}', (50,50 + 80*i), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0), 2)
+                
 
                 # cv2.putText(image, f'Info: {", ".join(errors)}', (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 2)
-                cv2.putText(image, f'Reps: {reps}', (1300,800), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 2)
             except:
                 # print(traceback.format_exc())
                 pass
@@ -396,6 +404,52 @@ def set_mode():
     reps = 0
     curr_mode = request.form["exercise"]
     return "OK"
+
+# client = Client(api_key=os.environ.get("key"))
+
+@app.route('/conversation', methods=['POST'])
+def start_conversation():
+    # Get user input and conversation count from request
+    user_input = request.json.get('user_input')
+    conversation_count = request.json.get('conversation_count')
+
+    if conversation_count == "3":
+        return flask.jsonify({'chatbot_response': 'Thank you for chatting! Have a great day.'}), 200
+
+    # Generate prompt for ChatGPT
+    prompt = f"Hey, engineer me a question to ask the user based on this input: '{user_input}' to extract insights from how their workout went."
+
+    # Send information to ChatGPT
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": user_input,
+            },
+            {
+                "role": "assistant",
+                "content": prompt
+            }
+        ],
+        model="gpt-3.5-turbo",
+    )
+
+    # Extract the response from ChatGPT
+    chatbot_response = chat_completion.choices[0].message.content
+
+    # Return the response to the client
+    return flask.jsonify({'chatbot_response': chatbot_response}), 200
+
+
+
+
+
+@app.route('/test', methods=['POST'])
+def receive_data():
+    data = request.form.get('acceleration')
+    print("Received data:", data)
+    return "Data received successfully"
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3001, debug=True)

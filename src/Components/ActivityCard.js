@@ -1,31 +1,38 @@
 import React from 'react';
 import "./ActivityCard.css";
+import { useNavigate } from 'react-router-dom';
 
 export default function ActivityCard(props) {
-    const handleClick = async () => {
-        try {
-            // Make POST request to your API
-            const response = await fetch('http://localhost:3001/set_mode', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Set content type to form data
-                },
-                body: new URLSearchParams({ exercise: props.name }), // Convert data to URLSearchParams
-            });
-            
-            // Check if the request was successful
-            if (response.status == 200) {
-                // If successful, navigate to the desired link
-                window.location.href = 'http://localhost:3001/video_feed';
-            } else {
-                // Handle errors if necessary
-                console.error('Error:', response.statusText);
-            }
-        } catch (error) {
+    const navigate = useNavigate()
+    const handleClick = () => {
 
-            // Handle errors if necessary
-            console.error('Error:', error);
-        }
+        navigate("/upload")
+
+
+        // async keyword 
+        // try {
+        //     // Make POST request to your API
+        //     const response = await fetch('http://localhost:3001/set_mode', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/x-www-form-urlencoded', // Set content type to form data
+        //         },
+        //         body: new URLSearchParams({ exercise: props.name }), // Convert data to URLSearchParams
+        //     });
+            
+        //     // Check if the request was successful
+        //     if (response.status == 200) {
+        //         // If successful, navigate to the desired link
+        //         window.location.href = 'http://localhost:3001/video_feed';
+        //     } else {
+        //         // Handle errors if necessary
+        //         console.error('Error:', response.statusText);
+        //     }
+        // } catch (error) {
+
+        //     // Handle errors if necessary
+        //     console.error('Error:', error);
+        // }
     }
     
     return (

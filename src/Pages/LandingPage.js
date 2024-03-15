@@ -14,7 +14,7 @@ const LandingPage = () => {
         <section className="hero">
           <h2>Perfect Your Form with AI</h2>
           <p>Our cutting-edge AI technology analyzes your exercise pose and provides real-time feedback to ensure you're performing exercises correctly.</p>
-          <form action="http://localhost:3000/dashboard">
+          <form action="http://localhost:3000/exercise">
             <input className="cta-btn" type="submit" value="Get Started" />
         </form>        </section>
         <section className="features">
